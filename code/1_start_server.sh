@@ -5,8 +5,9 @@ NAME='vault-server'
 NETWORK='isolated_nw'
 VAULT_DEV_ROOT_TOKEN_ID='addo2017rocksmysocks'
 
-echo -e "- THIS RUNS IN DETACHED MODE SO KEEP THIS SHELL RUNNING IN THE BACKGROUND -"
-echo -e "- OPEN A NEW SHELL TO RUN THE NEXT COMMAND -"
+echo -e "- This runs in detached mode so KEEP THIS SHELL RUNNING IN THE BACKGROUND -"
+echo -e "- Press 'Ctrl + C' to KILL -"
+echo -e "- OPEN A NEW SHELL to run the next command -"
 sleep 3
 
 docker run \
