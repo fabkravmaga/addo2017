@@ -5,6 +5,10 @@ NAME='vault-server'
 NETWORK='isolated_nw'
 VAULT_DEV_ROOT_TOKEN_ID='addo2017rocksmysocks'
 
+echo -e "- THIS RUNS IN DETACHED MODE SO KEEP THIS SHELL RUNNING IN THE BACKGROUND -"
+echo -e "- OPEN A NEW SHELL TO RUN THE NEXT COMMAND -"
+sleep 3
+
 docker run \
   --network=${NETWORK} \
   --cap-add IPC_LOCK \
