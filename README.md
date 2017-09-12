@@ -3,7 +3,7 @@ All Day DevOps 2017 materials
 
 [SLIDES HERE](https://docs.google.com/presentation/d/1OiJD24-Mn4zoDZaDnAdl5bRfFsy_YmxZUdGuAhzuWZM/edit?usp=sharing)
 
-Running ./code/setup
+Run the scripts in order of the numbers
 1. Setup
 
 2. Start Server
@@ -15,7 +15,6 @@ Running ./code/setup
 5. Build Secure Pipeline
 
 6. Rejoice
-
 
 ## References:
 
