@@ -3,6 +3,20 @@ All Day DevOps 2017 materials
 
 [SLIDES HERE](https://docs.google.com/presentation/d/1OiJD24-Mn4zoDZaDnAdl5bRfFsy_YmxZUdGuAhzuWZM/edit?usp=sharing)
 
+Running ./code/setup
+1. Setup
+
+2. Start Server
+
+3. Start UI
+
+4. Manage Secrets from UI / CLI
+
+5. Build Secure Pipeline
+
+6. Rejoice
+
+
 ## References:
 
 * https://github.com/djenriquez/vault-ui
