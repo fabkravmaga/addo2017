@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 const MongoClient = require('mongodb').MongoClient
 
-var db_credentials = '' // retrieve from machine's ENV
+var db_credentials = process.env.MONGODB_CREDENTIALS // retrieve from machine's ENV
 var db
 
 MongoClient.connect(db_credentials, (err, database) => {
