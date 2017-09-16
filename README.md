@@ -4,6 +4,7 @@ All Day DevOps 2017 materials
 [SLIDES HERE](https://docs.google.com/presentation/d/1OiJD24-Mn4zoDZaDnAdl5bRfFsy_YmxZUdGuAhzuWZM/edit?usp=sharing)
 
 Run the scripts in order of the numbers
+
 1. Setup
 
 2. Start Server
@@ -23,3 +24,5 @@ Run the scripts in order of the numbers
 * https://hub.docker.com/_/vault/
 
 * https://vaultproject.io
+
+* CRUD Web App instructions from: https://zellwk.com/blog/crud-express-mongodb/
