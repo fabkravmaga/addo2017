@@ -16,4 +16,4 @@ vault write auth/approle/role/example \
   policies=example_r
 
 # write a set of key value into path 'app/example/addo'
-vault write secret/example/addo service=mysql username=example_sqluser password=example_sqlpassword
+vault write secret/example/test service=test_service username=test_username password=test_password

@@ -1,5 +1,6 @@
 #!/bin/bash
 export VAULT_ADDR="http://127.0.0.1:8200"
+export SECRET_PATH='secret/example/test'
 
 # Make sure to have vault on your system before proceeding
 command -v vault >/dev/null 2>&1 || { echo >&2 "I require vault but it's not installed.  Aborting."; exit 1; }
@@ -26,14 +27,14 @@ echo -e "\nThese are the info on that the token that approle has:\n"
 vault token-lookup ${FINAL_TOKEN}
 
 echo -e "\nThese are the secrets that the approle can read:\n"
-vault read secret/example/addo
+vault read ${SECRET_PATH}
 
 echo -e "You can run curl:
-          \n$ curl -H "X-VAULT-TOKEN: ${FINAL_TOKEN}" ${VAULT_ADDR}/v1/secret/example/addo\n"
+          \n$ curl -H "X-VAULT-TOKEN: ${FINAL_TOKEN}" ${VAULT_ADDR}/v1/${SECRET_PATH}\n"
 
 echo -e "to retrieve secrets in JSON format:\n"
 curl --silent -H "X-VAULT-TOKEN: ${FINAL_TOKEN}" \
-  ${VAULT_ADDR}/v1/secret/example/addo
+  ${VAULT_ADDR}/v1/${SECRET_PATH}
 
 # Always Revoke test tokens
 echo ""

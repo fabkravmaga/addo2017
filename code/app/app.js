@@ -4,10 +4,16 @@ const bodyParser= require('body-parser');
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.set('view engine', 'ejs')
 
 const MongoClient = require('mongodb').MongoClient
 
-var db_credentials = process.env.MONGODB_CREDENTIALS // retrieve from machine's ENV
+/*/
+  Retrieve credentials from process's ENV and place it in the code
+  We usually forget where / how we store these credentials
+  Credentials usually get checked into source code or into bash scripts..
+/*/
+var db_credentials = process.env.MONGODB_CREDENTIALS
 var db
 
 MongoClient.connect(db_credentials, (err, database) => {
@@ -15,21 +21,26 @@ MongoClient.connect(db_credentials, (err, database) => {
   if (err) return console.log(err)
   db = database
   app.listen(3000, () => {
-    console.log('listening on 3000');
+    console.log('listening on port 3000');
   })
 })
 
-console.log('May Node be with you');
+console.log('May All Day DevOps, Node and Vault be with you');
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  // var cursor = db.collection('quotes').find()
+  db.collection('quotes').find().toArray((err, result) => {
+    if (err) return console.log(err)
+    // renders index.ejs
+    res.render('index.ejs', {quotes: result})
+  })
 })
 
 app.post('/quotes', (req, res) => {
   db.collection('quotes').save(req.body, (err, result) => {
     if (err) return console.log(err)
 
-    console.log('saved to database')
+    console.log('quotes saved to database')
     res.redirect('/')
   })
 })
