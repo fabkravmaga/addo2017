@@ -33,10 +33,12 @@ Steps:
 
 ## References:
 
-* https://github.com/djenriquez/vault-ui
+* Vault Binary - https://vaultproject.io
 
-* https://hub.docker.com/_/vault/
+* Vault Docker Image - https://hub.docker.com/_/vault/
 
-* https://vaultproject.io
+* Vault UI - https://github.com/djenriquez/vault-ui
 
-* CRUD Web App instructions from: https://zellwk.com/blog/crud-express-mongodb/
+* CRUD Web App Instructions - https://zellwk.com/blog/crud-express-mongodb/
+
+* Dockerize NodeJS app - https://nodejs.org/en/docs/guides/nodejs-docker-webapp/

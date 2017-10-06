@@ -5,12 +5,20 @@ export VAULT_ADDR="http://127.0.0.1:8200"
 command -v vault >/dev/null 2>&1 || { echo >&2 "I require vault but it's not installed.  Aborting."; exit 1; }
 command -v jq >/dev/null 2>&1 || { echo >&2 "I require jq but it's not installed.  Aborting."; exit 1; }
 
-VAULT_ROOT='addo2017rocksmysocks'
-VAULT_USER_PASS='addo2017rocksfabian'
-VAULT_USER='fabian'
+echo "Set a Vault (super)root token:"
+read VAULT_ROOT
+
+echo "Set a Vault username:"
+read VAULT_USER_PASS
+
+echo "Set a Vault password:"
+read VAULT_USER
 
 # login to vault as root to set up
 vault auth ${VAULT_ROOT}
+
+# enable audit log !
+vault audit-enable file file_path=/tmp/audit.log
 
 # write the policy into vault
 vault policy-write vault_admin ./policies/vault_admin.hcl
