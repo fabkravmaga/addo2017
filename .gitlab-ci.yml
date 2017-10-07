@@ -1,4 +1,4 @@
 job:
   script:
-    - "./code/vault/0_requirements.sh"
+    - "./code/vault/0_update_requirements.sh"
     - "echo done"
