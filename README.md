@@ -1,35 +1,42 @@
 # addo2017
+
 All Day DevOps 2017 Materials
 
-[SLIDES HERE](https://docs.google.com/presentation/d/1OiJD24-Mn4zoDZaDnAdl5bRfFsy_YmxZUdGuAhzuWZM/edit?usp=sharing)
+[VIEW SLIDES HERE](https://docs.google.com/presentation/d/1OiJD24-Mn4zoDZaDnAdl5bRfFsy_YmxZUdGuAhzuWZM/edit?usp=sharing)
 
-Simple All-In-One-Machine CICD Pipeline
+Simple Developer's All-In-One-Machine CICD Pipeline
 
 Steps:
 
-1. Run bash scripts in order of the numbers in the `./vault` folder
+1. Run bash scripts in order of the numbers in the `./code/vault` folder
 
 2. Manage Secrets from UI / CLI
 
-3. Run bash script in `./app` folder to start app
+3. Run bash script in `./code/app` folder to start app
 
 4. Build Secure Pipeline
 
 5. Rejoice =)
 
-## Benefits
+## Likely Benefits of using a Secret Management Service
 
-1. The app secrets do not retain on developers laptops
+1. Secrets are managed centrally
 
-2. The app secrets are stored and have redundancy on a server that is maintained so other developers can retrieve the latest app secrets
+2. Secrets can be rotated easily
 
-3. The app secrets are easily rotated often by using a low TTL
+3. Compromised secrets can be revoked, and rotated easily
 
-4. Compromised app secrets are revoked easily, and developers can retrieve the latest app secrets easily
+4. Lowers the risk of exposing valid secrets because secrets can be revoked and rotated immediately when:
+  1. developers lose a machine that contains secrets
+  2. when secrets are accidentally checked into source code repository
 
-5. Apps can retrieve the tokens to
+5. Secret management server issues secrets only to authorized developers through user policies and management
 
-6. App secrets that are accidentally checked into source code can be made invalid immediately
+6. Authorized developers can retrieve the latest secrets through API calls and not ask fellow developers
+
+7. Audit log of the retrieval of secrets
+
+8. One-time unwrap feature can ensure tokens are read once (HashiCorp Vault)
 
 ## References:
 
