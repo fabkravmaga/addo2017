@@ -13,5 +13,5 @@ docker run --network=isolated_nw \
   -p 3000:3000 \
   --name ${CTNR_NAME} \
   --env VAULT_ADDR \
-  -it 3jmaster/node-web-app \
+  -it 3jmaster/addo-demo-app \
   /usr/src/start_dev_pipeline.sh
