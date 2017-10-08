@@ -11,7 +11,7 @@ cache:
 install_dependencies:
   stage: build
   script:
-    - docker build -t 3jmaster/node-web-app my-demo-app/
+    - ls -lah
   artifacts:
     paths:
       - node_modules/
