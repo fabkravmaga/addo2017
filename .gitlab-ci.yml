@@ -7,19 +7,12 @@ stages:
   - build
   - test
 
-cache:
-  paths:
-    - node_modules/
-
 build_image:
   stage: build
   script:
     - docker build -t 3jmaster/addo-demo-app ./code/my-demo-app/
-  artifacts:
-    paths:
-      - node_modules/
 
-test_with_lab:
+test_with_vault:
   stage: test
   script:
     - docker run --network=isolated_nw --name 3jmaster -it 3jmaster/addo-demo-app /usr/src/app/start_app_server.sh

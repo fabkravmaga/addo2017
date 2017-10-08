@@ -6,8 +6,6 @@
 # Make sure to have ./etc/vault on your system before proceeding
 command -v ./etc/vault >/dev/null 2>&1 || { echo >&2 "I require ./etc/vault but it's not installed.  Aborting."; exit 1; }
 
-# export VAULT_ADDR="http://127.0.0.1:8200"
-# export VAULT_USERNAME='fabian'
 SECRET_PATH='secret/example/mongodb'
 
 : "${VAULT_ADDR?Need to set your VAULT_ADDR, usually 'export VAULT_ADDR=http://127.0.0.1:8200'}"
@@ -62,7 +60,7 @@ echo -e "-------------------------FINAL_TOKEN-----------------------------"
 export MONGODB_CREDENTIALS=$(./etc/vault read -field=url ${SECRET_PATH})
 # echo -e "\nmongoURL: ${MONGODB_CREDENTIALS}"
 
-# dont need the anymore!
+# dont need the token anymore!
 echo -e "\n-------------------------REVOKE-----------------------------"
 echo -e "Once secrets are retrieved, app doesn't need the token anymore! REVOKE!"
 ./etc/vault token-revoke ${FINAL_TOKEN}
