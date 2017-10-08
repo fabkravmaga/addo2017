@@ -1,4 +1,4 @@
-# addo2017
+# All Day DevOps (ADDO) 2017
 
 All Day DevOps 2017 Materials
 
