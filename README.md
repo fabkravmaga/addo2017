@@ -1,24 +1,51 @@
-# All Day DevOps (ADDO) 2017
+# All Day DevOps (ADDO) 2017 Material by `@3jmaster`
 
-All Day DevOps 2017 Materials
+## Remove Developers’ Shameful Secrets
 
-[VIEW SLIDES HERE](https://docs.google.com/presentation/d/1OiJD24-Mn4zoDZaDnAdl5bRfFsy_YmxZUdGuAhzuWZM/edit?usp=sharing)
+### [VIEW SLIDES HERE](https://docs.google.com/presentation/d/1OiJD24-Mn4zoDZaDnAdl5bRfFsy_YmxZUdGuAhzuWZM/edit?usp=sharing)
 
-Simple Developer's All-In-One-Machine CICD Pipeline
+***
 
-Steps:
+## Follow Along All-In-One-Local-Machine CICD Pipeline
 
-1. Run bash scripts in order of the numbers in the `./code/vault` folder
+### Guidelines for Running Scripts:
 
-2. Manage Secrets from UI / CLI
+1. Scripts were written on MacOS machine, please modify as needed for your environment
 
-3. Run bash script in `./code/app` folder to start app
+2. Ability to run [`vault`](https://www.vaultproject.io/downloads.html), [`docker`](https://docs.docker.com/engine/installation/), [`npm`](https://www.npmjs.com/get-npm) on your local machine
 
-4. Build Secure Pipeline
+3. Basic general knowledge of Docker, HashiCorp Vault, GitLab, GitHub, MongoDB, CICD, bash, etc...
 
-5. Rejoice =)
+### Steps:
 
-## Likely Benefits of using a Secret Management Service
+1. Run bash scripts in numeric order in `./code/vault` folder, [read more](./code/vault/README_vault.md)
+
+2. Manage Secrets from UI (`http://localhost:80`) on your browser or from your CLI (vault write ...)
+
+3. Run bash script in `./code/docker_build.sh` to build image locally
+
+3. Run bash script in `./code/docker_run.sh` to run image locally
+
+4. View my-demo-app on your browser http://localhost:3000
+
+5. Drink
+  ```
+  ~  ~
+  ( o )o)
+  ( o )o )o)
+  (o( ~~~~~~~~o
+  ( )' ~~~~~~~'
+  ( )|)       |-.
+  o|     _  |-. \
+  o| |_||_) |  \ \
+  | | ||_) |   | |
+  o|        |  / /
+  |        |." "
+  |        |- '
+  .========.   mb
+  ```
+
+### Likely Benefits of using a Secret Management Service
 
 1. Secrets are managed centrally
 
@@ -38,7 +65,7 @@ Steps:
 
 8. One-time unwrap feature can ensure tokens are read once (HashiCorp Vault)
 
-## References:
+### References:
 
 * Vault Binary - https://vaultproject.io
 
