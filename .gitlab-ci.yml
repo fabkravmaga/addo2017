@@ -5,20 +5,14 @@ before_script:
 
 stages:
   - build
-  - test
+  - run
 
 build_image:
   stage: build
   script:
     - docker build -t 3jmaster/addo-demo-app ./code/my-demo-app/
 
-test_with_vault:
-  stage: test
+run_with_vault:
+  stage: run
   script:
     - docker run --network=isolated_nw --name 3jmaster-addo-demo-app 3jmaster/addo-demo-app
-    - ./start_app_server.sh
-
-job:
-  script:
-    - "./code/vault/0_update_requirements.sh"
-    - "echo done"
