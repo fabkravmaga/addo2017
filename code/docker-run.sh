@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # clean up
-CTNR_NAME='3jmaster'
+CTNR_NAME='3jmaster-addo-demo-app'
 docker kill ${CTNR_NAME} 2>/dev/null
 docker rm ${CTNR_NAME} 2>/dev/null
 
@@ -14,4 +14,4 @@ docker run --network=isolated_nw \
   --name ${CTNR_NAME} \
   --env VAULT_ADDR \
   -it 3jmaster/addo-demo-app \
-  /usr/src/start_dev_pipeline.sh
+  /usr/src/start_app_server.sh

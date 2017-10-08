@@ -10,11 +10,14 @@ command -v ./etc/vault >/dev/null 2>&1 || { echo >&2 "I require ./etc/vault but 
 # export VAULT_USERNAME='fabian'
 SECRET_PATH='secret/example/mongodb'
 
+: "${VAULT_ADDR?Need to set your VAULT_ADDR, usually 'export VAULT_ADDR=http://127.0.0.1:8200'}"
+: "${VAULT_DEV_ROOT_TOKEN_ID?Need to set your VAULT_DEV_ROOT_TOKEN_ID}"
+: "${VAULT_USERNAME?Need to set your VAULT_USERNAME}"
+: "${VAULT_PASSWORD?Need to set your VAULT_PASSWORD}"
+
 # login as a human user!
-echo -e "vault login username:"
-read VAULT_USERNAME
 echo -e "hi! ${VAULT_USERNAME}"
-./etc/vault auth -method=userpass username=${VAULT_USERNAME} || exit
+./etc/vault auth -method=userpass username=${VAULT_USERNAME} password=${VAULT_PASSWORD} || exit
 
 ROLE_ID=$(./etc/vault read -field=role_id auth/approle/role/example/role-id)
 echo -e "\n-------------------------ROLE_ID-----------------------------"

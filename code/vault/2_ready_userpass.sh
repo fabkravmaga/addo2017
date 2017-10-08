@@ -5,17 +5,13 @@ export VAULT_ADDR="http://127.0.0.1:8200"
 command -v vault >/dev/null 2>&1 || { echo >&2 "I require vault but it's not installed.  Aborting."; exit 1; }
 command -v jq >/dev/null 2>&1 || { echo >&2 "I require jq but it's not installed.  Aborting."; exit 1; }
 
-echo "Set a Vault (super)root token:"
-read VAULT_ROOT
-
-echo "Set a Vault username:"
-read VAULT_USER_PASS
-
-echo "Set a Vault password:"
-read VAULT_USER
+: "${VAULT_ADDR?Need to set your VAULT_ADDR, usually 'export VAULT_ADDR=http://127.0.0.1:8200'}"
+: "${VAULT_DEV_ROOT_TOKEN_ID?Need to set your VAULT_DEV_ROOT_TOKEN_ID}"
+: "${VAULT_USERNAME?Need to set your VAULT_USERNAME}"
+: "${VAULT_PASSWORD?Need to set your VAULT_PASSWORD}"
 
 # login to vault as root to set up
-vault auth ${VAULT_ROOT}
+vault auth ${VAULT_DEV_ROOT_TOKEN_ID}
 
 # enable audit log !
 vault audit-enable file file_path=/tmp/audit.log
@@ -28,10 +24,10 @@ vault auth-enable userpass
 vault auth-enable approle
 
 # make a new user 'fabian'
-vault write auth/userpass/users/${VAULT_USER} policies=vault_admin password=${VAULT_USER_PASS}
+vault write auth/userpass/users/${VAULT_USERNAME} policies=vault_admin password=${VAULT_PASSWORD}
 
 # login to vault as fabian
-vault auth -method=userpass username=${VAULT_USER} password=${VAULT_USER_PASS}
+vault auth -method=userpass username=${VAULT_USERNAME} password=${VAULT_PASSWORD}
 vault token-lookup
 
 # Always revoke tokens for testing and printing out on screen

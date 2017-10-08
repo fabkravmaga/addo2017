@@ -13,4 +13,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD [ "sh", "/usr/src/start_dev_pipeline.sh" ]
+CMD [ "sh", "/usr/src/start_app_server.sh" ]

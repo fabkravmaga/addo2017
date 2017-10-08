@@ -3,7 +3,11 @@
 NODE_TLS_REJECT_UNAUTHORIZED=1 # Set to 0 to disable TLS (ex. vault deployed with self-signed certificate)
 NAME='vault-server'
 NETWORK='isolated_nw'
-VAULT_DEV_ROOT_TOKEN_ID='addo2017rocksmysocks'
+
+: "${VAULT_DEV_ROOT_TOKEN_ID?Need to set your VAULT_DEV_ROOT_TOKEN_ID}"
+: "${VAULT_USERNAME?Need to set your VAULT_USERNAME}"
+: "${VAULT_PASSWORD?Need to set your VAULT_PASSWORD}"
+
 
 echo -e "- This runs in detached mode so KEEP THIS SHELL RUNNING IN THE BACKGROUND -"
 echo -e "- Press 'Ctrl + C' to KILL -"

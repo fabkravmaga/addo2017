@@ -15,14 +15,13 @@ build_image:
   stage: build
   script:
     - docker build -t 3jmaster/addo-demo-app ./code/my-demo-app/
-    - docker run --network=isolated_nw --name 3jmaster -it 3jmaster/addo-demo-app /usr/src/app/start_dev_pipeline.sh
   artifacts:
     paths:
       - node_modules/
 
 test_with_lab:
   stage: test
-  script: npm run dev
+  script: - docker run --network=isolated_nw --name 3jmaster -it 3jmaster/addo-demo-app /usr/src/app/start_app_server.sh
 
 job:
   script:
