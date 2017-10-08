@@ -21,7 +21,8 @@ build_image:
 
 test_with_lab:
   stage: test
-  script: - docker run --network=isolated_nw --name 3jmaster -it 3jmaster/addo-demo-app /usr/src/app/start_app_server.sh
+  script:
+    - docker run --network=isolated_nw --name 3jmaster -it 3jmaster/addo-demo-app /usr/src/app/start_app_server.sh
 
 job:
   script:
