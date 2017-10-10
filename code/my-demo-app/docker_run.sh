@@ -19,6 +19,7 @@ docker run --network=isolated_nw \
   --env VAULT_ADDR \
   --env VAULT_USERNAME \
   --env VAULT_PASSWORD \
+  --env CI_COMMIT_SHA \
   ${IMG_NAME}
 
 # tail docker logs
