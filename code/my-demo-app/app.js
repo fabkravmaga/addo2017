@@ -20,7 +20,7 @@ MongoClient.connect(db_credentials, (err, database) => {
   // ... start the server
   if (err) return console.log(err)
   db = database
-  app.listen(80, () => {
+  app.listen(3000, () => {
     console.log('listening on port 3000');
   })
 })
