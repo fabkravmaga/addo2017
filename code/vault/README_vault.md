@@ -8,7 +8,7 @@ The scripts are named in a numeric way which corresponds with the order of execu
 
 =====
 
-First, create a file i.e. `touch .secret0` with contents:
+First, create a file: `touch .secret0` with contents:
 
 ```
 #!/bin/bash
@@ -17,8 +17,9 @@ export VAULT_DEV_ROOT_TOKEN_ID=''
 export VAULT_USERNAME=''
 export VAULT_PASSWORD=''
 ```
+*** This will be your secret0, your precious root secret.***
 
-Source the file `source ./secret0`.
+Source this file: `source ./secret0`.
 
 Run scripts in order:
 

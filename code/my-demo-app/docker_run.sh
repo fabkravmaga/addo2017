@@ -10,11 +10,15 @@ SERVER_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}
 
 export VAULT_ADDR="http://${SERVER_IP}:8200"
 
-echo "IN DOCKER RUN: $CI_PROJECT_DIR"
+echo "PROJECT DIR: $CI_PROJECT_DIR"
+echo "JOB ID: $CI_JOB_ID"
+echo "VAULT: $VAULT_USERNAME"
 
 docker run --network=isolated_nw \
   -d  \
   -p 3000:3000 \
   --name ${CTNR_NAME} \
   --env VAULT_ADDR \
+  --env VAULT_USERNAME\
+  --env VAULT_PASSWORD\
   ${IMG_NAME}
