@@ -5,3 +5,4 @@ node_modules
 npm-debug.log
 .mongolaburl
 .secret0
+nohup.out
