@@ -13,4 +13,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD [ "npm", "run", "dev"]
+CMD [ "./start_app_start.sh"]
