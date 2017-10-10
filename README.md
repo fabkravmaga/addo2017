@@ -8,7 +8,7 @@
 
 ## Follow Along All-In-One-Local-Machine CICD Pipeline
 
-### Guidelines for Running Scripts:
+### Notes / Guidelines for Running Demo Scripts:
 
 1. Scripts were written on MacOS machine, please modify as needed for your environment
 
@@ -16,19 +16,20 @@
 
 3. Basic general knowledge of Docker, HashiCorp Vault, GitLab, GitHub, MongoDB, CICD, bash, etc...
 
-### Steps:
+## Steps for Local Machine:
 
 1. Run bash scripts in numeric order in `./code/vault` folder, [read more](./code/vault/README_vault.md)
 
 2. Manage Secrets from UI (`http://localhost:80`) on your browser or from your CLI (vault write ...)
 
-3. Run bash script in `./code/docker_build.sh` to build image locally
+3. Run bash script in `./code/my-demo-app/docker_build.sh` to build image locally
 
-3. Run bash script in `./code/docker_run.sh` to run image locally
+3. Run bash script in `./code/my-demo-app/docker_run.sh` to run image locally
 
-4. View my-demo-app on your browser http://localhost:3000
+4. View the web app on your browser: http://localhost:3000
 
 5. Drink
+
   ```
   ~  ~
   ( o )o)
@@ -44,6 +45,7 @@
   |        |- '
   .========.   mb
   ```
+
 
 ### Likely Benefits of using a Secret Management Service
 
