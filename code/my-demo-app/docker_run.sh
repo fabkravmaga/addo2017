@@ -1,14 +1,14 @@
 #!/bin/bash
 
-CTNR_NAME='3jmaster-addo-demo-app'
-IMG_NAME='3jmaster/addo-demo-app'
-SERVER_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' vault-server)
-VAULT_ADDR="http://${SERVER_IP}:8200"
+export CTNR_NAME='3jmaster-addo-demo-app'
+export IMG_NAME='3jmaster/addo-demo-app'
+export SERVER_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' vault-server)
+export VAULT_ADDR="http://${SERVER_IP}:8200"
 
 echo "PROJECT DIR: $CI_PROJECT_DIR"
 echo "JOB ID: $CI_JOB_ID"
 echo "VAULT_USERNAME: $VAULT_USERNAME"
-echo "VAULT_ADDR $VAULT_ADDR"
+echo "VAULT_ADDR: $VAULT_ADDR"
 
 # clean up
 echo -e "Cleaning up previous containers."

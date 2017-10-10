@@ -44,3 +44,11 @@ app.post('/quotes', (req, res) => {
     res.redirect('/')
   })
 })
+
+app.get('/commit_hash', (req, res) => {
+  var hash='none'
+  if (process.env.CI_COMMIT_SHA){
+    hash=process.env.CI_COMMIT_SHA
+  }
+  res.send(hash);
+})
