@@ -1,5 +1,6 @@
 before_script:
   - docker ps
+  - ./code/my-demo-app/docker_stop_rm_app.sh
 
 stages:
   - build

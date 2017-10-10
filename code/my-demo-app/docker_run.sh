@@ -11,11 +11,6 @@ echo "CI_COMMIT_SHA: $CI_COMMIT_SHA"
 echo "VAULT_USERNAME: $VAULT_USERNAME"
 echo "VAULT_ADDR: $VAULT_ADDR"
 
-# clean up
-echo -e "Cleaning up previous containers."
-docker kill ${CTNR_NAME} 2>/dev/null
-docker rm ${CTNR_NAME} 2>/dev/null
-
 # run
 docker run --network=isolated_nw \
   -d  \
