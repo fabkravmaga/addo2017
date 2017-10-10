@@ -13,4 +13,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD [ "./code/my-demo-app/start_app_start.sh"]
+CMD [ "sh", "./code/my-demo-app/start_app_start.sh"]
