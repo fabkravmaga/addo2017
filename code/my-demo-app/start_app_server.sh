@@ -9,7 +9,6 @@ command -v ./etc/vault >/dev/null 2>&1 || { echo >&2 "I require ./etc/vault but 
 SECRET_PATH='secret/example/mongodb'
 
 : "${VAULT_ADDR?Need to set your VAULT_ADDR, usually 'export VAULT_ADDR=http://127.0.0.1:8200'}"
-: "${VAULT_DEV_ROOT_TOKEN_ID?Need to set your VAULT_DEV_ROOT_TOKEN_ID}"
 : "${VAULT_USERNAME?Need to set your VAULT_USERNAME}"
 : "${VAULT_PASSWORD?Need to set your VAULT_PASSWORD}"
 

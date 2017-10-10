@@ -13,4 +13,6 @@ COPY . .
 
 EXPOSE 3000
 
-CMD [ "sh", "./code/my-demo-app/start_app_start.sh"]
+COPY ./start_app_server.sh /usr/local/bin/start_app_server.sh
+
+CMD [ "start_app_server.sh"]

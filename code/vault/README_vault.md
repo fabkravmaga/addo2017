@@ -35,6 +35,7 @@ Run scripts in order:
 
 6. [`./5_start_ui.sh`](./5_start_ui.sh)
 
+7. Put secrets into the Vault - i.e. mongodb url, etc.
 
 To shutdown all vault services, run:
 
