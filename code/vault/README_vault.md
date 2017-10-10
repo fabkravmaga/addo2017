@@ -6,7 +6,7 @@ This folder contains scripts that allows you to run a developement version of Ha
 
 The scripts are named in a numeric way which corresponds with the order of execution.
 
-===
+=====
 
 First, create a file i.e. `touch .secret0` with contents:
 
@@ -44,6 +44,6 @@ When you fully understand what the scripts are doing, and is lazy, run all scrip
 
 1. [`./lazy_start_all.sh`](./lazy_start_all.sh)
 
-===
+=====
 
 Read more about [Vault environment variables](https://www.vaultproject.io/docs/commands/environment.html)
