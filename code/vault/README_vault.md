@@ -44,6 +44,8 @@ When you fully understand what the scripts are doing, and is lazy, run all scrip
 
 1. [`./lazy_start_all.sh`](./lazy_start_all.sh)
 
+2. View output here: `tail -f nohup.out`
+
 =====
 
 Read more about [Vault environment variables](https://www.vaultproject.io/docs/commands/environment.html)
