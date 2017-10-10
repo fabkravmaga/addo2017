@@ -22,4 +22,4 @@ docker run --network=isolated_nw \
   ${IMG_NAME}
 
 # tail docker logs
-docker logs -f ${CTNR_NAME}
+#docker logs -f ${CTNR_NAME}
