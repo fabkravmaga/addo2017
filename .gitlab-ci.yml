@@ -1,5 +1,3 @@
-image: node:latest
-
 before_script:
   - docker info
 
@@ -10,11 +8,13 @@ stages:
 build_image:
   stage: build
   script:
-    - echo $VAULT_USERNAME
+    - echo "$VAULT_USERNAME"
+    - echo "$CI_JOB_TOKEN"
     - ./code/my-demo-app/docker_build.sh || docker build -t 3jmaster/addo-demo-app ./code/my-demo-app/
 
 run_with_vault:
   stage: run
   script:
-    - echo $VAULT_USERNAME
+    - echo "$VAULT_USERNAME"
+    - echo "$CI_JOB_TOKEN"
     - ./code/my-demo-app/docker_run.sh || docker run --network=isolated_nw --name 3jmaster-addo-demo-app 3jmaster/addo-demo-app
