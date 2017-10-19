@@ -8,7 +8,7 @@
 
 ## Follow Along All-In-One-Local-Machine CICD Pipeline
 
-### Notes / Guidelines for Running Demo Scripts:
+### Notes / Pre-Requisites for Running Demo Scripts:
 
 1. Scripts were written on MacOS machine, please modify as needed for your environment
 
@@ -20,7 +20,7 @@
 
 1. Run bash scripts in numeric order in `./code/vault` folder, [read more](./code/vault/README_vault.md)
 
-2. Manage Secrets from UI (`http://localhost:80`) on your browser or from your CLI (vault write ...)
+2. Manage Secrets from Vault-UI (`http://localhost:80`) on your browser or from your CLI (vault write ...)
 
 3. Run bash script in `./code/my-demo-app/docker_build.sh` to build image locally
 
@@ -46,6 +46,17 @@
   .========.   mb
   ```
 
+## Steps for Live Environment:
+
+1. My Demo App @ http://13.228.110.97:3000/
+
+  * Make your presence! Submit your name and a quote!
+
+2. Vault-UI @ http://13.228.110.97/
+
+  * Use low-risk, read-only credentials user:addo2017 and password:addo2017
+
+  * You only have permissions to see `secret/example/test` and `secret/example/mongodb-read`
 
 ### Likely Benefits of using a Secret Management Service
 
