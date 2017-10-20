@@ -1,8 +1,10 @@
-# All Day DevOps (ADDO) 2017 Material by `@3jmaster`
+![All Day DevOps 2017](./doc/ADDO_logo_horizontal_white.png "All Day DevOps 2017")
 
-## Remove Developers’ Shameful Secrets
+> by @3jmaster
 
-### [VIEW SLIDES HERE](https://docs.google.com/presentation/d/1OiJD24-Mn4zoDZaDnAdl5bRfFsy_YmxZUdGuAhzuWZM/edit?usp=sharing)
+# Remove Developers’ Shameful Secrets
+
+### [VIEW All DAY DEVOPS 2017 SLIDES HERE](https://docs.google.com/presentation/d/1OiJD24-Mn4zoDZaDnAdl5bRfFsy_YmxZUdGuAhzuWZM/edit?usp=sharing)
 
 ***
 
