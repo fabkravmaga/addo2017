@@ -1,4 +1,4 @@
-![All Day DevOps 2017](./doc/ADDO_logo_horizontal_white.png "All Day DevOps 2017")
+![All Day DevOps 2017](./doc/ADDO_logo_horizontal.png "All Day DevOps 2017")
 
 > by @3jmaster
 
