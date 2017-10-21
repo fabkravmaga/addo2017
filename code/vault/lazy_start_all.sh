@@ -3,6 +3,10 @@
 PWD=$(pwd)
 source ${PWD}/.secret0
 
+rm -f nohup.out
+touch nohup.out
+tail -f nohup.out &
+
 # Shutdown all first
 nohup bash 99_shutdown_all.sh
 
