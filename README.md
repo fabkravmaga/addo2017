@@ -54,13 +54,15 @@
 
 1. My Demo App @ http://13.228.110.97:3000/
 
-  * Make your presence! Submit your name and a quote!
+  * Mark your presence! Submit your name and a quote! :)
 
 2. Vault-UI @ http://13.228.110.97/
 
   * Try it using low-risk, read-only credentials user:addo2017 and password:addo2017
 
   * Permissions to see `secret/example/test` and `secret/example/mongodb-read`
+
+3. Merging any changes into master branch will get the changes to be live
 
 ### Likely Benefits of using a Secret Management Service
 
