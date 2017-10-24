@@ -2,13 +2,13 @@
 
 The `policies` folder contains the policies needed to administer the basic vault set up like a vault admin, and an example approle.
 
-This folder contains scripts that allows you to run a developement version of HashiCorp Vault (along with a graphical UI) locally on your machine using Docker.
+This folder contains scripts that allows you to run a development version of HashiCorp Vault (along with a graphical UI) locally on your machine using Docker.
 
 The scripts are named in a numeric way which corresponds with the order of execution.
 
-=====
+***
 
-First, create a file: `touch .secret0` with contents:
+First, create a file: `touch .secret0`, and fill VAULT_DEV_ROOT_TOKEN_ID, VAULT_USERNAME and VAULT_PASSWORD with your own values:
 
 ```
 #!/bin/bash
@@ -17,7 +17,8 @@ export VAULT_DEV_ROOT_TOKEN_ID=''
 export VAULT_USERNAME=''
 export VAULT_PASSWORD=''
 ```
-*** This will be your secret0, your precious root secret.***
+
+*** This will be your secret0, precious root secret.***
 
 Source this file: `source ./secret0`.
 
@@ -48,6 +49,6 @@ When you fully understand what the scripts are doing, and is lazy, run all scrip
 
 2. View output here: `tail -f nohup.out`
 
-=====
+***
 
 Read more about [Vault environment variables](https://www.vaultproject.io/docs/commands/environment.html)

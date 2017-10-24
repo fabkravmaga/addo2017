@@ -1,4 +1,4 @@
-##README Demo App
+# README Demo App
 
 This demo app connects to a MongoDB in MongoLab.com by retrieving the credentials from Vault.
 

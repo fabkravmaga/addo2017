@@ -4,7 +4,9 @@
 
 # Remove Developers’ Shameful Secrets
 
-### [VIEW All DAY DEVOPS 2017 SLIDES HERE](https://docs.google.com/presentation/d/1OiJD24-Mn4zoDZaDnAdl5bRfFsy_YmxZUdGuAhzuWZM/edit?usp=sharing)
+### [All DAY DEVOPS 2017 SLIDES HERE](https://docs.google.com/presentation/d/1OiJD24-Mn4zoDZaDnAdl5bRfFsy_YmxZUdGuAhzuWZM/edit?usp=sharing)
+
+### [POST-CONFERENCE BLOG POST HERE](.)
 
 ***
 
@@ -20,7 +22,7 @@
 
 ## Steps for Local Machine:
 
-1. Run bash scripts in numeric order in `./code/vault` folder, [read more](./code/vault/README_vault.md)
+1. Run bash scripts in numeric order in `./code/vault` folder, [more instructions here](./code/vault/README.md)
 
 2. Manage Secrets from Vault-UI (`http://localhost:80`) on your browser or from your CLI (vault write ...)
 
@@ -30,7 +32,7 @@
 
 4. View the web app on your browser: http://localhost:3000
 
-5. Drink
+5. Cheers!
 
   ```
   ~  ~
@@ -56,9 +58,9 @@
 
 2. Vault-UI @ http://13.228.110.97/
 
-  * Use low-risk, read-only credentials user:addo2017 and password:addo2017
+  * Try it using low-risk, read-only credentials user:addo2017 and password:addo2017
 
-  * You only have permissions to see `secret/example/test` and `secret/example/mongodb-read`
+  * Permissions to see `secret/example/test` and `secret/example/mongodb-read`
 
 ### Likely Benefits of using a Secret Management Service
 
