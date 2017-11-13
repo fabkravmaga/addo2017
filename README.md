@@ -6,7 +6,7 @@
 
 ### [All DAY DEVOPS 2017 SLIDES HERE](https://docs.google.com/presentation/d/1OiJD24-Mn4zoDZaDnAdl5bRfFsy_YmxZUdGuAhzuWZM/edit?usp=sharing)
 
-### [POST-CONFERENCE BLOG POST HERE](.)
+### [POST-CONFERENCE BLOG POST HERE](https://medium.com/what-about-security/all-day-devops-2017-removing-developers-shameful-secrets-f5aca3960316)
 
 ***
 
