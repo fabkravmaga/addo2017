@@ -1,5 +1,4 @@
 #!/bin/bash
-export VAULT_ADDR="http://127.0.0.1:8200"
 
 # Make sure to have vault on your system before proceeding
 command -v vault >/dev/null 2>&1 || { echo >&2 "I require vault but it's not installed.  Aborting."; exit 1; }

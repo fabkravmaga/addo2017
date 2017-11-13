@@ -26,7 +26,7 @@ Run scripts in order:
 
 1. [`./0_update_requirements.sh`](./0_update_requirements.sh)
 
-2. [`./1_start_server.sh`](./1_start_server)
+2. [`./1_start_server.sh`](./1_start_server.sh)
 
 3. [`./2_ready_userpass.sh`](./2_ready_userpass.sh)
 
