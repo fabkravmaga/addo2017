@@ -3,8 +3,8 @@
 # This is where a developer integrates this simple script
 # to retrieve the necessary token as THE APP (not as a human user)
 
-# Make sure to have ./etc/vault on your system before proceeding
-command -v ./etc/vault >/dev/null 2>&1 || { echo >&2 "I require ./etc/vault but it's not installed.  Aborting."; exit 1; }
+# Make sure to have vault on your system before proceeding
+command -v vault >/dev/null 2>&1 || { echo >&2 "I require vault but it's not installed.  Aborting."; exit 1; }
 
 SECRET_PATH='secret/example/mongodb'
 echo "VAULT_USERNAME: $VAULT_USERNAME"
@@ -16,14 +16,14 @@ echo "VAULT_ADDR: $VAULT_ADDR"
 
 # login as a human user!
 echo -e "hi! ${VAULT_USERNAME}"
-./etc/vault auth -method=userpass username=${VAULT_USERNAME} password=${VAULT_PASSWORD} || exit
+vault auth -method=userpass username=${VAULT_USERNAME} password=${VAULT_PASSWORD} || exit
 
 echo -e ""
 echo -e "._ _  |  _    o  _|"
 echo -e "| (_) | (/_   | (_|"
 echo -e ""
 
-ROLE_ID=$(./etc/vault read -field=role_id auth/approle/role/example/role-id)
+ROLE_ID=$(vault read -field=role_id auth/approle/role/example/role-id)
 echo -e "ROLE_ID: ${ROLE_ID} (not a secret; like a USERNAME for app)"
 
 sleep 3
@@ -35,7 +35,7 @@ echo -e "           |   |                                "
 echo -e ""
 
 # This wrapped token is like a parcel
-WRAPPED_TOKEN=$(./etc/vault write -f \
+WRAPPED_TOKEN=$(vault write -f \
                   -field=wrapping_token \
                   -wrap-ttl=60s \
                   auth/approle/role/example/secret-id)
@@ -56,7 +56,7 @@ echo -e " _  _   _ ._ _ _|_   o  _|"
 echo -e "_> (/_ (_ | (/_ |_   | (_|"
 echo -e ""
 
-SECRET_ID=$(./etc/vault unwrap -field=secret_id ${WRAPPED_TOKEN})
+SECRET_ID=$(vault unwrap -field=secret_id ${WRAPPED_TOKEN})
 echo -e "SECRET_ID: ${SECRET_ID}"
 echo -e "\nSECRET_ID is like a PASSWORD used to authenticate the app.\n"
 
@@ -70,7 +70,7 @@ echo -e ""
 
 echo -e "\nPairing ROLE_ID and SECRET_ID, we now authenticate the app.\n"
 
-FINAL_TOKEN=$(./etc/vault write -field=token \
+FINAL_TOKEN=$(vault write -field=token \
                 auth/approle/login \
                 role_id=${ROLE_ID} \
                 secret_id=${SECRET_ID})
@@ -78,7 +78,7 @@ FINAL_TOKEN=$(./etc/vault write -field=token \
 echo -e "FINAL_TOKEN: ${FINAL_TOKEN}"
 
 # READ SECRET!
-export MONGODB_CREDENTIALS=$(./etc/vault read -field=url ${SECRET_PATH})
+export MONGODB_CREDENTIALS=$(vault read -field=url ${SECRET_PATH})
 # echo -e "\nmongoURL: ${MONGODB_CREDENTIALS}"
 
 # Revoke! dont need the token anymore!
@@ -87,7 +87,7 @@ echo -e "._ _      _  |   _  "
 echo -e "| (/_ \/ (_) |< (/_ "
 echo -e ""
 echo -e "Once secrets are retrieved, app doesn't need the token anymore! REVOKE!"
-./etc/vault token-revoke ${FINAL_TOKEN}
+vault token-revoke ${FINAL_TOKEN}
 
 # finally, run the app in dev mode...
 npm run dev
