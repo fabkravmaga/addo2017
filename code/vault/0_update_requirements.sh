@@ -8,7 +8,6 @@ command -v vault >/dev/null 2>&1 || { echo >&2 "I require vault but it's not ins
 
 # Get latest docker images
 docker pull vault
-docker pull djenriquez/vault-ui
 
 # Set docker environment, networks, etc
 docker network create --driver bridge isolated_nw
