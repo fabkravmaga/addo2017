@@ -26,7 +26,7 @@ vault auth enable approle
 vault write auth/userpass/users/${VAULT_USERNAME} policies=vault_admin password=${VAULT_PASSWORD}
 
 # login to vault as new user
-vault auth -method=userpass username=${VAULT_USERNAME} password=${VAULT_PASSWORD}
+vault login -method=userpass username=${VAULT_USERNAME} password=${VAULT_PASSWORD}
 vault token lookup
 
 # Always revoke tokens for testing and printing out on screen
