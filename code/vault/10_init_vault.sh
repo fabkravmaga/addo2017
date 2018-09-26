@@ -27,7 +27,7 @@ echo "Unsealing Vault"
 
 COUNTER=1
 cat /tmp/vault.init | grep '^Unseal' | awk '{print $4}' | for key in $(cat -); do
-  vault unseal $key
+  vault operator unseal $key
   COUNTER=$((COUNTER + 1))
 done
 
