@@ -10,7 +10,7 @@ command -v jq >/dev/null 2>&1 || { echo >&2 "I require jq but it's not installed
 : "${VAULT_PASSWORD?Need to set your VAULT_PASSWORD}"
 
 # login to vault as root to set up
-vault auth ${VAULT_DEV_ROOT_TOKEN_ID}
+vault login ${VAULT_DEV_ROOT_TOKEN_ID}
 
 # enable audit log !
 vault audit enable file file_path=/tmp/audit.log
