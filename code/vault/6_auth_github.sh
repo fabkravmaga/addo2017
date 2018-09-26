@@ -15,4 +15,4 @@ vault login ${VAULT_DEV_ROOT_TOKEN_ID}
 vault auth enable github
 
 vault write auth/github/config organization=$ORGANIZATION
-vault write auth/github/map/teams/dev value=example_rw
+vault write auth/github/map/teams/admin value=vault_admin
