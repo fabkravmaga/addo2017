@@ -13,21 +13,21 @@ command -v jq >/dev/null 2>&1 || { echo >&2 "I require jq but it's not installed
 vault auth ${VAULT_DEV_ROOT_TOKEN_ID}
 
 # enable audit log !
-vault audit-enable file file_path=/tmp/audit.log
+vault audit enable file file_path=/tmp/audit.log
 
 # write the policy into vault
-vault policy-write vault_admin ./policies/vault_admin.hcl
+vault policy write vault_admin ./policies/vault_admin.hcl
 
 # enable auth methods
-vault auth-enable userpass
-vault auth-enable approle
+vault auth enable userpass
+vault auth enable approle
 
 # make a new user based on the values defined in the .secret0 file
 vault write auth/userpass/users/${VAULT_USERNAME} policies=vault_admin password=${VAULT_PASSWORD}
 
 # login to vault as new user
 vault auth -method=userpass username=${VAULT_USERNAME} password=${VAULT_PASSWORD}
-vault token-lookup
+vault token lookup
 
 # Always revoke tokens for testing and printing out on screen
 # TOKEN=$(vault token-lookup -format=json | jq -r .data.id)
