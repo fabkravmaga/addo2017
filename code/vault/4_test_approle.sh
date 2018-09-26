@@ -23,7 +23,7 @@ FINAL_TOKEN=$(vault write -field=token \
 echo "FINAL_TOKEN: ${FINAL_TOKEN} (final, revokable secret that the app uses; like any token to use to call Vault API)"
 
 echo -e "\nThese are the info on that the token that approle has:\n"
-vault token-lookup ${FINAL_TOKEN}
+vault token lookup ${FINAL_TOKEN}
 
 echo -e "\nThese are the secrets that the approle can read:\n"
 vault read ${SECRET_PATH}
@@ -37,5 +37,5 @@ curl --silent -H "X-VAULT-TOKEN: ${FINAL_TOKEN}" \
 
 # Always Revoke test tokens
 echo ""
-vault token-revoke ${FINAL_TOKEN}
-vault token-revoke ${SECRET_ID}
+vault token revoke ${FINAL_TOKEN}
+vault token revoke ${SECRET_ID}
