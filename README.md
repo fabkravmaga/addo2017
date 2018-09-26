@@ -1,3 +1,5 @@
+This setup was originally done for 
+
 ![All Day DevOps 2017](./doc/ADDO_logo_horizontal.png "All Day DevOps 2017")
 
 > by @3jmaster
@@ -52,13 +54,13 @@
 
 ## Steps for Live Environment:
 
-1. My Demo App @ http://13.228.110.97:3000/
+1. My Demo App @ http://app.thepingofhealth.com:8888/
 
     * Mark your presence! Submit your name and a quote! :)
 
-2. Vault-UI @ http://13.228.110.97/
+2. Vault @ http://master.thepingofhealth.com:8200/ui
 
-    * Try it using low-risk, read-only credentials user:addo2017 and password:addo2017
+    * Try it using low-risk, read-only credentials user:fabian and password:fabian15awesome
 
     * Permissions to see `secret/example/test` and `secret/example/mongodb-read`
 
