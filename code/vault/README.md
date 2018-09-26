@@ -18,29 +18,29 @@ Run scripts in order:
 
 4.  `cat /tmp/vault.init` to view root token
 
-4. Create a file: `touch .secret0`, and fill VAULT_DEV_ROOT_TOKEN_ID, VAULT_USERNAME and VAULT_PASSWORD with your own values:
+5. Create a file: `touch .secret0`, and fill VAULT_DEV_ROOT_TOKEN_ID, VAULT_USERNAME and VAULT_PASSWORD with your own values:
 
-  ```
-  #!/bin/bash
-  export VAULT_ADDR='https://127.0.0.1:8200'
-  export VAULT_DEV_ROOT_TOKEN_ID='' # to fill in Initial Root Token here
-  export VAULT_USERNAME='' # to fill in your own username
-  export VAULT_PASSWORD='' # to fill in your own password
-  ```
+    ```
+    #!/bin/bash
+    export VAULT_ADDR='https://127.0.0.1:8200'
+    export VAULT_DEV_ROOT_TOKEN_ID='' # to fill in Initial Root Token here
+    export VAULT_USERNAME='' # to fill in your own username
+    export VAULT_PASSWORD='' # to fill in your own password
+    ```
+
+    *** This will be your secret0, precious root secret.***
   
-  *** This will be your secret0, precious root secret.***
-  
-5. [`source ./secret0`](.)
+6. [`source ./secret0`](.)
 
-3. [`./2_ready_userpass.sh`](./2_ready_userpass.sh)
+7. [`./2_ready_userpass.sh`](./2_ready_userpass.sh)
 
-4. [`./3_ready_approle.sh`](./3_ready_approle.sh)
+8. [`./3_ready_approle.sh`](./3_ready_approle.sh)
 
-5. [`./4_test_approle.sh`](./4_test_approle.sh)
+9. [`./4_test_approle.sh`](./4_test_approle.sh)
 
-6. [`./5_start_ui.sh`](./5_start_ui.sh)
+10. _OPTIONAL_ [`./5_start_ui.sh`](./5_start_ui.sh)
 
-7. Put secrets into the Vault - i.e. mongodb url, etc.
+11. Put secrets into the Vault - i.e. mongodb url, etc.
 
 To shutdown all vault services, run:
 
