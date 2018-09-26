@@ -2,31 +2,35 @@
 
 The `policies` folder contains the policies needed to administer the basic vault set up like a vault admin, and an example approle.
 
-This folder contains scripts that allows you to run a development version of HashiCorp Vault (along with a graphical UI) locally on your machine using Docker.
+This folder contains scripts that allows you to run a development version of HashiCorp Vault locally on your machine using Docker.
 
 The scripts are named in a numeric way which corresponds with the order of execution.
 
 ***
-
-First, create a file: `touch .secret0`, and fill VAULT_DEV_ROOT_TOKEN_ID, VAULT_USERNAME and VAULT_PASSWORD with your own values:
-
-```
-#!/bin/bash
-export VAULT_ADDR='https://127.0.0.1:8200'
-export VAULT_DEV_ROOT_TOKEN_ID=''
-export VAULT_USERNAME=''
-export VAULT_PASSWORD=''
-```
-
-*** This will be your secret0, precious root secret.***
-
-Source this file: `source ./secret0`.
 
 Run scripts in order:
 
 1. [`./0_update_requirements.sh`](./0_update_requirements.sh)
 
 2. [`./1_start_server.sh`](./1_start_server.sh)
+
+3. [`./10_init_vault.sh`](./10_init_vault.sh)
+
+4.  `cat /tmp/vault.init` to view root token
+
+4. Create a file: `touch .secret0`, and fill VAULT_DEV_ROOT_TOKEN_ID, VAULT_USERNAME and VAULT_PASSWORD with your own values:
+
+  ```
+  #!/bin/bash
+  export VAULT_ADDR='https://127.0.0.1:8200'
+  export VAULT_DEV_ROOT_TOKEN_ID='' # to fill in Initial Root Token here
+  export VAULT_USERNAME='' # to fill in your own username
+  export VAULT_PASSWORD='' # to fill in your own password
+  ```
+  
+  *** This will be your secret0, precious root secret.***
+  
+5. [`source ./secret0`](.)
 
 3. [`./2_ready_userpass.sh`](./2_ready_userpass.sh)
 
