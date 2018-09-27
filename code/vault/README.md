@@ -1,5 +1,7 @@
 # README Vault Setup
 
+**NOT FOR PRODUCTION USE, ONLY FOR LEARNING**
+
 The `policies` folder contains the policies needed to administer the basic vault set up like a vault admin, and an example approle.
 
 This folder contains scripts that allows you to run a development version of HashiCorp Vault locally on your machine using Docker.
