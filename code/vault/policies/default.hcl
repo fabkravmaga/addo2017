@@ -95,3 +95,18 @@ path "secret/example*"{
 path "secret/" {
   capabilities = ["read", "list"]
 }
+
+# CRUD on approle
+path "auth/approle/role/*" {
+  capabilities = ["list","read"]
+}
+
+# CRUD on approle
+path "auth/approle/role/example/*" {
+  policy ="write"
+  capabilities = ["create", "read", "update", "list"]
+}
+
+path "sys/capabilities-self" {
+  policy = "read"
+}
